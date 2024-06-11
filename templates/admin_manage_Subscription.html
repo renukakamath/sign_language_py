@@ -1,0 +1,91 @@
+{% include 'adminheader.html' %}
+<center>
+    <div class="img-div">
+
+    
+    <h1 class="hd">Add Subscription</h1>
+    <form action="" method="post" class="form" style="width: 50%;">
+        <table class="table form-group">
+            <tr>
+                <th>Subscription</th>
+                <td><input type="radio"  value="monthly" required name="policy" id="">monthly
+
+                    <input type="radio"  value="quarterly" required name="policy" id="">quarterly
+
+                    <input type="radio"  value="yearly" required name="policy" id="">yearly</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td><input type="number" class="form-control" required name="amt" id=""></td>
+            </tr>
+            <tr>
+                <th>date</th>
+                <td><input type="date" class="form-control" required name="no_days" id=""></td>
+            </tr>
+            <tr>
+               
+                <td colspan="2" align="center"><input type="submit" class="btn btn-success" name="btn" id=""></td>
+            </tr>
+            </table>
+            </form>
+
+ 
+</div>
+    <br><br>
+ 
+ 
+
+<script src="
+https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+<script>
+    $(function() {
+        $("input[name='fname']").on('input', function(e) {
+            $(this).val($(this).val().replace(/[^A-Za-z ]/g, ''));
+
+        });
+        $("input[name='lname']").on('input', function(e) {
+            $(this).val($(this).val().replace(/[^A-Za-z ]/g, ''));
+
+        });
+        // $("input[name='dob']").on('input', function(e) {
+        //     $(this).val($(this).val().replace(/[^0-9/]/g, ''));
+
+        // });
+        
+        $("input[name='phone']").on('input', function(e) {
+        	$(this).val($(this).val().replace(/[^0-9]/g, ''));
+            
+        });
+        $("input[name='pin']").on('input', function(e) {
+        	$(this).val($(this).val().replace(/[^0-9]/g, ''));
+            
+        });
+        $("input[name='email']").on('input', function(e) {
+              var re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{1,}/.test(this.value);
+                if(!re) {
+                    $('#eerror').show();
+                } else {
+                    $('#eerror').hide();
+                }
+
+        });
+        $("input[name='address']").on('input', function(e) {
+            $(this).val($(this).val().replace(/[^A-Za-z0-9()/. ]/g, ''));
+
+        });
+        $("input[name='place']").on('input', function(e) {
+            $(this).val($(this).val().replace(/[^A-Za-z ]/g, ''));
+
+        });
+            
+        $("input[name='pwd']").on('input', function(e) {
+        	$(this).val($(this).val().replace(/[^0-9A-Za-z@/. ]/g, ''));
+            
+        });
+    });
+
+
+</script>
+
+{% include 'footer.html' %}

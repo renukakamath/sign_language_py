@@ -1,0 +1,46 @@
+{% include 'adminheader.html' %}
+
+<center>
+    <div class="img-div"></div>
+    <h3>Uploaded Images</h3>
+    <form action="" method="post">
+    <table class="table table-striped tbl-new bg-light shadow" style="max-width: 1200px;">
+        <tr>
+            <th>User</th>
+            <th>file</th>
+            <th>Out</th>
+            <th>Date</th>
+           
+
+        </tr>
+        {% for row in data['res'] %}
+        <tr>
+            <td>{{ row['fname'] }}{{ row['lname'] }}</td>
+
+
+            {% if row['type']=="video" %}
+
+        
+            <td><video width="100" height="100" controls>
+                  <source src="/{{row['file']}}" type="video/mp4g">
+                  <source src="/{{ row['file'] }}" type="video/ogg">
+                 
+        </video></td>
+            {% elif row['type']=="image" %}
+
+            <td><img src="/{{row['file']}}"  width="100"  height="100"></td>
+            {% endif %}
+          
+          
+            <td>{{ row['out'] }}</td>
+            <td>{{row['date']}}</td>
+
+           
+
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+</center>
+
+{% include 'footer.html' %}
